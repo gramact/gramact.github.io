@@ -1,0 +1,152 @@
+@import url('https://api.fonts.coollabs.io/css2?family=Baloo+Chettan+2&family=Calligraffitti&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: antiquewhite;
+    text-align: center;
+    background: #AB274F;
+    accent-color: #e96ca8;
+}
+
+#imageGallery {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.profile-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 250px;
+    height: 250px;
+    text-align: center;
+    padding: 2rem;
+}
+
+.profile-container img {
+    /* display: block; */
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    text-align: center;
+    margin: 1rem;
+}
+
+.profile-img:hover {
+    /* transform: scale(1.25); */
+    border-top-style:solid;
+    border-right-style: dotted;
+    border-bottom-style: solid;
+    border-left-style: dotted;
+    border-width: 0.25rem;
+    border-color: #e96ca8;
+    text-align: center;
+}
+
+.profile-img-link {
+    text-align: center;
+}
+
+.profile-img-link:hover {
+transform: scale(1.25);
+}
+
+.profile-title {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    font-weight: bolder;
+    color: #ffffff;
+    text-align: center;
+}
+
+h1 {
+    font-weight: 1000;
+    font-size: 4rem;
+    text-decoration: none;
+    text-align: center;
+    color: #F9f1cc;
+}
+
+.profile-img-link {
+    text-decoration: none;
+    text-align: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bolder;
+    color: #ffffff;
+    text-shadow: 2px 1px #AB274F;
+}
+
+#myInput {
+    background-position: 10px 12px;
+    background: none;
+    background-repeat: no-repeat;
+    width: 25%;
+    height: 1rem;
+    justify-content: center;
+    font-size: 1rem;
+    border: none;
+    border-bottom: 1px solid #e96ca8;
+    outline: none;
+    color: antiquewhite;
+    font-weight: bolder;
+    padding: 1rem;
+  }
+
+  #myInput:focus {
+    background-color: #e96ca8;
+    border-radius: 2rem;
+  }
+
+  h1 span {
+    font-weight: 1000;
+    font-size: 4rem;
+    color: #e96ca8;
+  }
+
+  header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items:center;
+    margin: 4rem;
+  }
+
+  @media screen and (max-width: 800px) {
+    header {
+      flex-direction: column;
+      justify-content: center;
+    align-items:center;
+    }
+    #myInput {
+        width: 75%;
+    }
+    #imageGallery {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+  }
+
+  main {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-bottom: 4rem;
+  }

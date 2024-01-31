@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ActressGram</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const rowDiv = document.getElementById("row");
+            const colDiv1 = document.createElement("div");
+            colDiv1.className = "column";
+            colDiv1.id = "col1";
+            const colDiv2 = document.createElement("div");
+            colDiv2.className = "column";
+            colDiv2.id = "col2";
+            const colDiv3 = document.createElement("div");
+            colDiv3.className = "column";
+            colDiv3.id = "col3";
+            const colDiv4 = document.createElement("div");
+            colDiv4.className = "column";
+            colDiv4.id = "col4";
+
+            const images = "profile_pages/images/sanyamalhotra_/2016-02-28_10-53-28_UTC.jpg profile_pages/images/sanyamalhotra_/2016-06-09_05-28-39_UTC.jpg profile_pages/images/sanyamalhotra_/2016-06-10_15-16-04_UTC.jpg profile_pages/images/sanyamalhotra_/2017-05-12_06-46-09_UTC.jpg profile_pages/images/sanyamalhotra_/2018-02-22_11-16-41_UTC.jpg profile_pages/images/sanyamalhotra_/2019-06-01_17-08-21_UTC.jpg profile_pages/images/sanyamalhotra_/2020-02-03_12-30-13_UTC.jpg profile_pages/images/sanyamalhotra_/2020-05-23_11-18-01_UTC.jpg profile_pages/images/sanyamalhotra_/2020-08-30_15-57-44_UTC.jpg profile_pages/images/sanyamalhotra_/2021-02-18_07-05-35_UTC_1.jpg profile_pages/images/sanyamalhotra_/2021-02-18_07-05-35_UTC_2.jpg profile_pages/images/sanyamalhotra_/2021-02-18_07-05-35_UTC_3.jpg profile_pages/images/sanyamalhotra_/2021-02-20_12-57-30_UTC_1.jpg profile_pages/images/sanyamalhotra_/2021-02-20_12-57-30_UTC_2.jpg profile_pages/images/sanyamalhotra_/2021-11-02_13-59-41_UTC_1.jpg profile_pages/images/sanyamalhotra_/2021-11-02_13-59-41_UTC_2.jpg profile_pages/images/sanyamalhotra_/2021-11-04_15-45-46_UTC.jpg profile_pages/images/sanyamalhotra_/2022-02-25_14-44-38_UTC_1.jpg profile_pages/images/sanyamalhotra_/2022-02-25_14-44-38_UTC_2.jpg profile_pages/images/sanyamalhotra_/2022-03-01_12-45-22_UTC.jpg profile_pages/images/sanyamalhotra_/2022-03-13_04-57-25_UTC_1.jpg profile_pages/images/sanyamalhotra_/2022-05-14_05-20-48_UTC_1.jpg profile_pages/images/sanyamalhotra_/2022-05-31_07-57-36_UTC_1.jpg profile_pages/images/sanyamalhotra_/2022-07-09_10-53-39_UTC.jpg profile_pages/images/sanyamalhotra_/2022-12-21_15-54-10_UTC.jpg profile_pages/images/sanyamalhotra_/2023-02-15_05-44-25_UTC_1.jpg profile_pages/images/sanyamalhotra_/2023-03-10_10-02-12_UTC_1.jpg profile_pages/images/sanyamalhotra_/2023-03-10_10-02-12_UTC_2.jpg profile_pages/images/sanyamalhotra_/2023-04-05_11-32-47_UTC_3.jpg profile_pages/images/sanyamalhotra_/2023-04-12_06-57-35_UTC_1.jpg profile_pages/images/sanyamalhotra_/2023-06-15_14-41-53_UTC_1.jpg profile_pages/images/sanyamalhotra_/2023-06-19_13-56-59_UTC_1.jpg profile_pages/images/sanyamalhotra_/2023-06-19_13-56-59_UTC_2.jpg profile_pages/images/sanyamalhotra_/2023-08-19_16-13-06_UTC_1.jpg profile_pages/images/sanyamalhotra_/2023-09-15_17-07-07_UTC_1.jpg profile_pages/images/sanyamalhotra_/2023-10-31_05-41-25_UTC_7.jpg profile_pages/images/sanyamalhotra_/2024-01-19_08-24-50_UTC_1.jpg profile_pages/images/sanyamalhotra_/2024-01-19_08-24-50_UTC_3.jpg"
+            .split(" ");
+
+            const imagesPerDiv = Math.round(images.length / 4);
+            let imageCount = 0;
+            console.log(imagesPerDiv);
+            images.forEach(image => {
+                const img = document.createElement("img");
+                img.src = image.replace("profile_pages/","");
+                img.style = "width:100%";
+                if (imageCount < imagesPerDiv) {
+                    colDiv1.appendChild(img);
+                }
+                else if (imageCount < imagesPerDiv * 2) {
+                    colDiv2.appendChild(img);
+                }
+                else if (imageCount < imagesPerDiv * 3) {
+                    colDiv3.appendChild(img);
+                }
+                else if (imageCount < imagesPerDiv * 4){
+                    colDiv4.appendChild(img);
+                }
+                else {
+                    colDiv1.appendChild(img);
+                }
+                imageCount = imageCount + 1;
+                console.log(imageCount);
+            });
+            rowDiv.appendChild(colDiv1);
+            rowDiv.appendChild(colDiv2);
+            rowDiv.appendChild(colDiv3);
+            rowDiv.appendChild(colDiv4);
+        });
+    </script>
+</head>
+
+<body>
+    <div id="row" class="row">
+
+    </div>
+</body>
+
+</html>

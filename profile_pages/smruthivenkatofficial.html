@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ActressGram</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const rowDiv = document.getElementById("row");
+            const colDiv1 = document.createElement("div");
+            colDiv1.className = "column";
+            colDiv1.id = "col1";
+            const colDiv2 = document.createElement("div");
+            colDiv2.className = "column";
+            colDiv2.id = "col2";
+            const colDiv3 = document.createElement("div");
+            colDiv3.className = "column";
+            colDiv3.id = "col3";
+            const colDiv4 = document.createElement("div");
+            colDiv4.className = "column";
+            colDiv4.id = "col4";
+
+            const images = "profile_pages/images/smruthivenkatofficial/2016-11-15_06-47-24_UTC.jpg profile_pages/images/smruthivenkatofficial/2017-05-21_05-19-48_UTC.jpg profile_pages/images/smruthivenkatofficial/2017-08-01_06-48-53_UTC.jpg profile_pages/images/smruthivenkatofficial/2017-11-27_07-57-31_UTC.jpg profile_pages/images/smruthivenkatofficial/2019-01-11_15-20-23_UTC_2.jpg profile_pages/images/smruthivenkatofficial/2019-05-11_05-43-35_UTC_1.jpg profile_pages/images/smruthivenkatofficial/2019-06-14_08-39-00_UTC_1.jpg profile_pages/images/smruthivenkatofficial/2019-06-26_16-19-08_UTC.jpg profile_pages/images/smruthivenkatofficial/2019-08-26_08-41-41_UTC_1.jpg profile_pages/images/smruthivenkatofficial/2019-09-14_06-43-02_UTC_2.jpg profile_pages/images/smruthivenkatofficial/2020-01-11_12-12-01_UTC_3.jpg profile_pages/images/smruthivenkatofficial/2020-07-16_16-13-09_UTC_3.jpg profile_pages/images/smruthivenkatofficial/2020-08-02_12-35-56_UTC_1.jpg profile_pages/images/smruthivenkatofficial/2020-09-17_13-13-46_UTC.jpg profile_pages/images/smruthivenkatofficial/2020-10-06_14-57-46_UTC.jpg profile_pages/images/smruthivenkatofficial/2020-10-10_13-33-48_UTC.jpg profile_pages/images/smruthivenkatofficial/2020-10-13_15-31-57_UTC_1.jpg profile_pages/images/smruthivenkatofficial/2020-10-13_15-31-57_UTC_2.jpg profile_pages/images/smruthivenkatofficial/2020-10-14_15-12-27_UTC.jpg profile_pages/images/smruthivenkatofficial/2020-10-27_15-38-03_UTC.jpg profile_pages/images/smruthivenkatofficial/2020-11-10_15-56-38_UTC.jpg profile_pages/images/smruthivenkatofficial/2021-04-15_04-47-11_UTC_1.jpg profile_pages/images/smruthivenkatofficial/2021-04-15_04-47-11_UTC_2.jpg profile_pages/images/smruthivenkatofficial/2021-07-03_13-18-48_UTC_3.jpg profile_pages/images/smruthivenkatofficial/2021-07-09_13-23-58_UTC_3.jpg profile_pages/images/smruthivenkatofficial/2022-03-13_14-37-13_UTC_2.jpg profile_pages/images/smruthivenkatofficial/2022-03-13_14-37-13_UTC_3.jpg profile_pages/images/smruthivenkatofficial/2022-04-20_14-39-23_UTC_1.jpg profile_pages/images/smruthivenkatofficial/2022-05-14_15-51-52_UTC_1.jpg profile_pages/images/smruthivenkatofficial/2022-07-31_05-10-52_UTC_1.jpg profile_pages/images/smruthivenkatofficial/2022-09-26_12-08-48_UTC_2.jpg profile_pages/images/smruthivenkatofficial/2022-11-08_10-43-33_UTC_1.jpg profile_pages/images/smruthivenkatofficial/2022-11-08_10-43-33_UTC_2.jpg profile_pages/images/smruthivenkatofficial/2023-01-10_13-59-53_UTC_2.jpg profile_pages/images/smruthivenkatofficial/2023-05-21_14-48-43_UTC_1.jpg profile_pages/images/smruthivenkatofficial/2023-08-29_05-09-58_UTC_2.jpg profile_pages/images/smruthivenkatofficial/2023-08-29_05-09-58_UTC_3.jpg"
+            .split(" ");
+
+            const imagesPerDiv = Math.round(images.length / 4);
+            let imageCount = 0;
+            console.log(imagesPerDiv);
+            images.forEach(image => {
+                const img = document.createElement("img");
+                img.src = image.replace("profile_pages/","");
+                img.style = "width:100%";
+                if (imageCount < imagesPerDiv) {
+                    colDiv1.appendChild(img);
+                }
+                else if (imageCount < imagesPerDiv * 2) {
+                    colDiv2.appendChild(img);
+                }
+                else if (imageCount < imagesPerDiv * 3) {
+                    colDiv3.appendChild(img);
+                }
+                else if (imageCount < imagesPerDiv * 4){
+                    colDiv4.appendChild(img);
+                }
+                else {
+                    colDiv1.appendChild(img);
+                }
+                imageCount = imageCount + 1;
+                console.log(imageCount);
+            });
+            rowDiv.appendChild(colDiv1);
+            rowDiv.appendChild(colDiv2);
+            rowDiv.appendChild(colDiv3);
+            rowDiv.appendChild(colDiv4);
+        });
+    </script>
+</head>
+
+<body>
+    <div id="row" class="row">
+
+    </div>
+</body>
+
+</html>
