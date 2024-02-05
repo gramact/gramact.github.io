@@ -1,4 +1,5 @@
-@import url('https://api.fonts.coollabs.io/css2?family=Baloo+Chettan+2&family=Calligraffitti&display=swap');
+
+@import url('https://api.fonts.coollabs.io/css2?family=Outfit&display=swap');
 
 * {
     box-sizing: border-box;
@@ -8,68 +9,11 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    color: antiquewhite;
+    font-family: 'Outfit', sans-serif;
+    color: black;
     text-align: center;
-    background: #AB274F;
-    accent-color: #e96ca8;
-}
-
-#imageGallery {
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.profile-container {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    width: 250px;
-    height: 250px;
-    text-align: center;
-    padding: 2rem;
-}
-
-.profile-container img {
-    /* display: block; */
-    width: 100%;
-    height: auto;
-    border-radius: 50%;
-    text-align: center;
-    margin: 1rem;
-}
-
-.profile-img:hover {
-    /* transform: scale(1.25); */
-    border-top-style:solid;
-    border-right-style: dotted;
-    border-bottom-style: solid;
-    border-left-style: dotted;
-    border-width: 0.25rem;
-    border-color: #e96ca8;
-    text-align: center;
-}
-
-.profile-img-link {
-    text-align: center;
-}
-
-.profile-img-link:hover {
-transform: scale(1.25);
-}
-
-.profile-title {
-    position: absolute;
-    bottom: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 12px;
-    font-weight: bolder;
-    color: #ffffff;
-    text-align: center;
+    background: #e6e6e6;
+    accent-color: #838383;
 }
 
 h1 {
@@ -77,17 +21,7 @@ h1 {
     font-size: 4rem;
     text-decoration: none;
     text-align: center;
-    color: #F9f1cc;
-}
-
-.profile-img-link {
-    text-decoration: none;
-    text-align: center;
-    align-items: center;
-    font-size: 12px;
-    font-weight: bolder;
-    color: #ffffff;
-    text-shadow: 2px 1px #AB274F;
+    color: black;
 }
 
 #myInput {
@@ -97,56 +31,95 @@ h1 {
     width: 25%;
     height: 1rem;
     justify-content: center;
+    font-family: 'Outfit', sans-serif;
+    font-weight: lighter;
     font-size: 1rem;
     border: none;
-    border-bottom: 1px solid #e96ca8;
+    border-bottom: 1px solid #838383;
     outline: none;
-    color: antiquewhite;
-    font-weight: bolder;
+    color: black;
     padding: 1rem;
-  }
+}
 
-  #myInput:focus {
-    background-color: #e96ca8;
-    border-radius: 2rem;
-  }
-
-  h1 span {
-    font-weight: 1000;
-    font-size: 4rem;
-    color: #e96ca8;
-  }
-
-  header {
+header {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items:center;
+    align-items: center;
     margin: 4rem;
-  }
+}
 
-  @media screen and (max-width: 800px) {
+.profile-img {
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+    border-radius: 50%;
+    filter: grayscale(1);
+    margin-top: 1rem;
+}
+
+.profile-img:hover {
+    transform: scale(1.25);
+}
+
+#imageGallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    margin: 1.5rem;
+}
+
+.profile-id-link {
+    text-decoration: none;
+    color: black;
+    font-weight: 900;
+}
+
+@media screen and (max-width: 800px) {
     header {
-      flex-direction: column;
-      justify-content: center;
-    align-items:center;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
+
     #myInput {
         width: 75%;
     }
+
     #imageGallery {
-        text-align: center;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
     }
-  }
+}
 
-  main {
+main {
     padding-left: 4rem;
     padding-right: 4rem;
     padding-bottom: 4rem;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+      color: #e6e6e6;
+      background: black;
+    }
+  
+    .profile-id-link, h1 {
+      color: #e6e6e6;
+    }
+
+    #myInput {
+        color: #e6e6e6;
+    }
   }

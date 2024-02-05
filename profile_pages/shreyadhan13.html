@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ActressGram</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const rowDiv = document.getElementById("row");
+            const colDiv1 = document.createElement("div");
+            colDiv1.className = "column";
+            colDiv1.id = "col1";
+            const colDiv2 = document.createElement("div");
+            colDiv2.className = "column";
+            colDiv2.id = "col2";
+            const colDiv3 = document.createElement("div");
+            colDiv3.className = "column";
+            colDiv3.id = "col3";
+            const colDiv4 = document.createElement("div");
+            colDiv4.className = "column";
+            colDiv4.id = "col4";
+
+            const images = "profile_pages/images/shreyadhan13/2022-04-11_06-35-36_UTC.jpg profile_pages/images/shreyadhan13/2022-05-25_11-03-17_UTC_1.jpg profile_pages/images/shreyadhan13/2022-05-26_07-22-29_UTC_2.jpg profile_pages/images/shreyadhan13/2022-05-26_07-22-29_UTC_3.jpg profile_pages/images/shreyadhan13/2022-06-07_07-06-23_UTC_2.jpg profile_pages/images/shreyadhan13/2022-06-07_09-10-03_UTC_2.jpg profile_pages/images/shreyadhan13/2022-06-07_12-26-05_UTC_1.jpg profile_pages/images/shreyadhan13/2022-06-07_12-26-05_UTC_2.jpg profile_pages/images/shreyadhan13/2022-06-07_12-26-05_UTC_3.jpg profile_pages/images/shreyadhan13/2022-06-08_09-14-20_UTC_2.jpg profile_pages/images/shreyadhan13/2022-06-08_10-32-25_UTC_2.jpg profile_pages/images/shreyadhan13/2022-06-08_10-32-25_UTC_3.jpg profile_pages/images/shreyadhan13/2022-06-08_13-07-46_UTC_1.jpg profile_pages/images/shreyadhan13/2022-06-09_06-34-54_UTC_3.jpg profile_pages/images/shreyadhan13/2022-06-09_09-31-29_UTC_1.jpg profile_pages/images/shreyadhan13/2022-06-09_11-27-41_UTC_1.jpg profile_pages/images/shreyadhan13/2022-06-09_13-30-18_UTC_3.jpg profile_pages/images/shreyadhan13/2022-06-10_06-08-56_UTC_5.jpg profile_pages/images/shreyadhan13/2022-06-11_03-55-17_UTC_3.jpg profile_pages/images/shreyadhan13/2022-06-12_08-39-40_UTC_1.jpg profile_pages/images/shreyadhan13/2022-06-12_12-11-52_UTC_2.jpg profile_pages/images/shreyadhan13/2022-08-24_06-33-57_UTC.jpg profile_pages/images/shreyadhan13/2022-08-24_15-41-26_UTC.jpg profile_pages/images/shreyadhan13/2022-08-27_12-29-34_UTC.jpg profile_pages/images/shreyadhan13/2022-08-28_07-16-21_UTC.jpg profile_pages/images/shreyadhan13/2022-08-28_16-55-33_UTC.jpg profile_pages/images/shreyadhan13/2022-08-30_14-42-31_UTC.jpg profile_pages/images/shreyadhan13/2023-03-31_15-30-00_UTC.jpg profile_pages/images/shreyadhan13/2023-07-27_15-30-00_UTC_4.jpg profile_pages/images/shreyadhan13/2023-07-27_15-30-00_UTC_7.jpg profile_pages/images/shreyadhan13/2023-07-27_15-30-00_UTC_8.jpg profile_pages/images/shreyadhan13/2023-09-18_07-21-39_UTC_1.jpg profile_pages/images/shreyadhan13/2023-12-13_12-30-00_UTC_2.jpg profile_pages/images/shreyadhan13/2023-12-13_15-32-51_UTC_1.jpg profile_pages/images/shreyadhan13/2023-12-15_06-37-15_UTC_3.jpg profile_pages/images/shreyadhan13/2023-12-15_12-38-44_UTC_2.jpg".split(" ");
+
+            const imagesPerDiv = Math.round(images.length / 4);
+            let imageCount = 0;
+            console.log(imagesPerDiv);
+            images.forEach(image => {
+                const img = document.createElement("img");
+                img.src = image.replace("profile_pages/","");
+                img.style = "width:100%";
+                if (imageCount < imagesPerDiv) {
+                    colDiv1.appendChild(img);
+                }
+                else if (imageCount < imagesPerDiv * 2) {
+                    colDiv2.appendChild(img);
+                }
+                else if (imageCount < imagesPerDiv * 3) {
+                    colDiv3.appendChild(img);
+                }
+                else if (imageCount < imagesPerDiv * 4){
+                    colDiv4.appendChild(img);
+                }
+                else {
+                    colDiv1.appendChild(img);
+                }
+                imageCount = imageCount + 1;
+                console.log(imageCount);
+            });
+            rowDiv.appendChild(colDiv1);
+            rowDiv.appendChild(colDiv2);
+            rowDiv.appendChild(colDiv3);
+            rowDiv.appendChild(colDiv4);
+        });
+    </script>
+</head>
+
+<body>
+    <div id="row" class="row">
+
+    </div>
+</body>
+
+</html>
