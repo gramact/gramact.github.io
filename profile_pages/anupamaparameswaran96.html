@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ActressGram</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const rowDiv = document.getElementById("row");
+            const colDiv1 = document.createElement("div");
+            colDiv1.className = "column";
+            colDiv1.id = "col1";
+            const colDiv2 = document.createElement("div");
+            colDiv2.className = "column";
+            colDiv2.id = "col2";
+            const colDiv3 = document.createElement("div");
+            colDiv3.className = "column";
+            colDiv3.id = "col3";
+            const colDiv4 = document.createElement("div");
+            colDiv4.className = "column";
+            colDiv4.id = "col4";
+
+            const images = "profile_pages/images/anupamaparameswaran96/2018-10-23_13-40-39_UTC_4.jpg profile_pages/images/anupamaparameswaran96/2018-12-10_04-35-46_UTC.jpg profile_pages/images/anupamaparameswaran96/2019-04-15_03-35-27_UTC.jpg profile_pages/images/anupamaparameswaran96/2019-09-11_00-06-26_UTC.jpg profile_pages/images/anupamaparameswaran96/2020-10-24_12-18-39_UTC.jpg profile_pages/images/anupamaparameswaran96/2021-02-20_01-02-31_UTC.jpg profile_pages/images/anupamaparameswaran96/2021-04-02_05-04-35_UTC.jpg profile_pages/images/anupamaparameswaran96/2021-04-27_11-37-24_UTC.jpg profile_pages/images/anupamaparameswaran96/2021-08-21_05-13-23_UTC_2.jpg profile_pages/images/anupamaparameswaran96/2021-08-21_05-42-59_UTC_3.jpg profile_pages/images/anupamaparameswaran96/2021-10-04_07-09-21_UTC.jpg profile_pages/images/anupamaparameswaran96/2022-02-26_15-02-36_UTC_2.jpg profile_pages/images/anupamaparameswaran96/2022-07-22_13-52-15_UTC_2.jpg profile_pages/images/anupamaparameswaran96/2022-07-22_13-52-15_UTC_4.jpg profile_pages/images/anupamaparameswaran96/2023-03-08_10-56-55_UTC_1.jpg profile_pages/images/anupamaparameswaran96/2023-03-08_10-56-55_UTC_4.jpg profile_pages/images/anupamaparameswaran96/2023-03-08_10-56-55_UTC_9.jpg profile_pages/images/anupamaparameswaran96/2023-03-28_13-05-38_UTC_2.jpg profile_pages/images/anupamaparameswaran96/2023-08-21_12-15-00_UTC_1.jpg profile_pages/images/anupamaparameswaran96/2023-08-21_12-15-00_UTC_10.jpg profile_pages/images/anupamaparameswaran96/2023-11-01_06-12-55_UTC_3.jpg profile_pages/images/anupamaparameswaran96/2024-01-23_12-21-52_UTC_1.jpg profile_pages/images/anupamaparameswaran96/2024-01-23_12-21-52_UTC_7.jpg"
+            .split(" ");
+
+            const imagesPerDiv = Math.round(images.length / 4);
+            let imageCount = 0;
+            console.log(imagesPerDiv);
+            images.forEach(image => {
+                const img = document.createElement("img");
+                img.src = image.replace("profile_pages/","");
+                img.style = "width:100%";
+                if (imageCount < imagesPerDiv) {
+                    colDiv1.appendChild(img);
+                }
+                else if (imageCount < imagesPerDiv * 2) {
+                    colDiv2.appendChild(img);
+                }
+                else if (imageCount < imagesPerDiv * 3) {
+                    colDiv3.appendChild(img);
+                }
+                else if (imageCount < imagesPerDiv * 4){
+                    colDiv4.appendChild(img);
+                }
+                else {
+                    colDiv1.appendChild(img);
+                }
+                imageCount = imageCount + 1;
+                console.log(imageCount);
+            });
+            rowDiv.appendChild(colDiv1);
+            rowDiv.appendChild(colDiv2);
+            rowDiv.appendChild(colDiv3);
+            rowDiv.appendChild(colDiv4);
+        });
+    </script>
+</head>
+
+<body>
+    <div id="row" class="row">
+
+    </div>
+</body>
+
+</html>

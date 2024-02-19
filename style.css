@@ -16,12 +16,19 @@ body {
     accent-color: #838383;
 }
 
-h1 {
+h1, h1 span {
     font-weight: 1000;
     font-size: 4rem;
     text-decoration: none;
     text-align: center;
     color: black;
+}
+
+h1 span{
+    background: -webkit-linear-gradient(rgba(255,0,0,1), rgba(255,0,138,1), rgba(85,0,255,1));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 #myInput {
@@ -55,7 +62,7 @@ header {
     height: 15rem;
     object-fit: cover;
     border-radius: 50%;
-    filter: grayscale(1);
+    /* filter: grayscale(1); */
     margin-top: 1rem;
 }
 
@@ -115,7 +122,7 @@ main {
       background: black;
     }
   
-    .profile-id-link, h1 {
+    .profile-id-link, h1{
       color: #e6e6e6;
     }
 
