@@ -16,19 +16,32 @@ body {
     accent-color: #838383;
 }
 
-h1, h1 span {
+a h1 {
     font-weight: 1000;
     font-size: 4rem;
     text-decoration: none;
     text-align: center;
-    color: black;
+    color: rgb(255,0,138);
 }
 
-h1 span{
+/* h1 span{
     background: -webkit-linear-gradient(rgba(255,0,0,1), rgba(255,0,138,1), rgba(85,0,255,1));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+} */
+
+h1:hover {
+        color: #fff;
+        text-shadow:
+            0 0 7px #fff,
+            0 0 10px #fff,
+            0 0 21px #fff,
+            0 0 42px rgb(255,0,138),
+            0 0 82px rgb(255,0,138),
+            0 0 92px rgb(255,0,138),
+            0 0 102px rgb(255,0,138),
+            0 0 151px rgb(255,0,138);
 }
 
 #myInput {
@@ -58,16 +71,16 @@ header {
 }
 
 .profile-img {
-    width: 15rem;
-    height: 15rem;
+    width: 8rem;
+    height: 8rem;
     object-fit: cover;
     border-radius: 50%;
     /* filter: grayscale(1); */
     margin-top: 1rem;
 }
 
-.profile-img:hover {
-    transform: scale(1.25);
+.profile-container:hover {
+    transform: scale(1.5);
 }
 
 #imageGallery {
@@ -87,7 +100,8 @@ header {
 .profile-id-link {
     text-decoration: none;
     color: black;
-    font-weight: 900;
+    font-size: 0.75rem;
+    /* font-weight: 900; */
 }
 
 @media screen and (max-width: 800px) {
@@ -103,7 +117,7 @@ header {
 
     #imageGallery {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
@@ -129,4 +143,10 @@ main {
     #myInput {
         color: #e6e6e6;
     }
+  }
+
+  menu a img {
+    color: white;
+    width: 4rem;
+    height: auto;
   }

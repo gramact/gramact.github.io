@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ActressGram</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const rowDiv = document.getElementById("row");
+            const colDiv1 = document.createElement("div");
+            colDiv1.className = "column";
+            colDiv1.id = "col1";
+            const colDiv2 = document.createElement("div");
+            colDiv2.className = "column";
+            colDiv2.id = "col2";
+            const colDiv3 = document.createElement("div");
+            colDiv3.className = "column";
+            colDiv3.id = "col3";
+            const colDiv4 = document.createElement("div");
+            colDiv4.className = "column";
+            colDiv4.id = "col4";
+
+            const images = "profile_pages/images/sanjanasanghi96/2019-10-06_08-32-28_UTC_2.jpg profile_pages/images/sanjanasanghi96/2019-10-20_07-17-41_UTC_2.jpg profile_pages/images/sanjanasanghi96/2019-10-27_07-49-48_UTC_3.jpg profile_pages/images/sanjanasanghi96/2020-01-01_18-16-38_UTC_1.jpg profile_pages/images/sanjanasanghi96/2020-01-01_18-16-38_UTC_3.jpg profile_pages/images/sanjanasanghi96/2020-02-18_13-40-15_UTC_1.jpg profile_pages/images/sanjanasanghi96/2021-03-12_17-36-14_UTC_1.jpg profile_pages/images/sanjanasanghi96/2021-04-03_07-56-30_UTC_3.jpg profile_pages/images/sanjanasanghi96/2021-04-22_08-35-11_UTC.jpg profile_pages/images/sanjanasanghi96/2021-09-03_12-21-29_UTC_1.jpg profile_pages/images/sanjanasanghi96/2021-09-03_12-21-29_UTC_2.jpg profile_pages/images/sanjanasanghi96/2021-09-03_12-21-29_UTC_3.jpg profile_pages/images/sanjanasanghi96/2021-10-10_13-42-37_UTC_4.jpg profile_pages/images/sanjanasanghi96/2021-10-23_05-31-57_UTC_1.jpg profile_pages/images/sanjanasanghi96/2021-10-30_07-01-41_UTC_2.jpg profile_pages/images/sanjanasanghi96/2022-01-26_15-23-40_UTC_3.jpg profile_pages/images/sanjanasanghi96/2022-03-17_06-40-48_UTC_4.jpg profile_pages/images/sanjanasanghi96/2022-03-17_06-40-48_UTC_5.jpg profile_pages/images/sanjanasanghi96/2022-06-11_14-33-42_UTC_3.jpg profile_pages/images/sanjanasanghi96/2022-06-13_07-48-54_UTC_4.jpg profile_pages/images/sanjanasanghi96/2022-07-02_07-59-49_UTC_2.jpg profile_pages/images/sanjanasanghi96/2022-07-05_07-18-30_UTC_5.jpg profile_pages/images/sanjanasanghi96/2022-07-05_07-18-30_UTC_6.jpg profile_pages/images/sanjanasanghi96/2022-07-14_09-26-48_UTC_1.jpg profile_pages/images/sanjanasanghi96/2022-07-14_09-26-48_UTC_3.jpg profile_pages/images/sanjanasanghi96/2022-07-28_06-43-09_UTC_4.jpg profile_pages/images/sanjanasanghi96/2022-07-30_10-11-36_UTC_1.jpg profile_pages/images/sanjanasanghi96/2022-09-10_09-39-48_UTC_1.jpg profile_pages/images/sanjanasanghi96/2022-11-03_13-50-42_UTC_3.jpg profile_pages/images/sanjanasanghi96/2022-11-17_13-17-28_UTC_1.jpg profile_pages/images/sanjanasanghi96/2022-11-17_13-17-28_UTC_2.jpg profile_pages/images/sanjanasanghi96/2022-11-17_13-17-28_UTC_3.jpg profile_pages/images/sanjanasanghi96/2022-11-17_13-17-28_UTC_4.jpg profile_pages/images/sanjanasanghi96/2022-11-17_13-17-28_UTC_5.jpg profile_pages/images/sanjanasanghi96/2022-11-17_13-17-28_UTC_6.jpg profile_pages/images/sanjanasanghi96/2023-01-27_10-16-09_UTC_7.jpg profile_pages/images/sanjanasanghi96/2023-02-22_12-41-31_UTC_2.jpg profile_pages/images/sanjanasanghi96/2023-02-22_12-41-31_UTC_6.jpg profile_pages/images/sanjanasanghi96/2023-06-01_13-37-38_UTC_1.jpg profile_pages/images/sanjanasanghi96/2023-06-01_13-37-38_UTC_4.jpg profile_pages/images/sanjanasanghi96/2023-06-25_12-19-21_UTC_5.jpg profile_pages/images/sanjanasanghi96/2023-10-17_14-13-11_UTC_7.jpg profile_pages/images/sanjanasanghi96/2023-12-24_07-52-38_UTC_3.jpg profile_pages/images/sanjanasanghi96/2023-12-24_07-52-38_UTC_4.jpg profile_pages/images/sanjanasanghi96/2023-12-25_11-51-16_UTC_3.jpg profile_pages/images/sanjanasanghi96/2024-01-13_12-11-25_UTC_3.jpg"
+            .split(" ");
+
+            const imagesPerDiv = Math.round(images.length / 4);
+            let imageCount = 0;
+            console.log(imagesPerDiv);
+            images.forEach(image => {
+                const img = document.createElement("img");
+                img.src = image.replace("profile_pages/","");
+                img.style = "width:100%";
+                if (imageCount < imagesPerDiv) {
+                    colDiv1.appendChild(img);
+                }
+                else if (imageCount < imagesPerDiv * 2) {
+                    colDiv2.appendChild(img);
+                }
+                else if (imageCount < imagesPerDiv * 3) {
+                    colDiv3.appendChild(img);
+                }
+                else if (imageCount < imagesPerDiv * 4){
+                    colDiv4.appendChild(img);
+                }
+                else {
+                    colDiv1.appendChild(img);
+                }
+                imageCount = imageCount + 1;
+                console.log(imageCount);
+            });
+            rowDiv.appendChild(colDiv1);
+            rowDiv.appendChild(colDiv2);
+            rowDiv.appendChild(colDiv3);
+            rowDiv.appendChild(colDiv4);
+        });
+    </script>
+</head>
+
+<body>
+    <div id="row" class="row">
+
+    </div>
+</body>
+
+</html>
