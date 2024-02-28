@@ -24,12 +24,7 @@ a h1 {
     color: rgb(255,0,138);
 }
 
-/* h1 span{
-    background: -webkit-linear-gradient(rgba(255,0,0,1), rgba(255,0,138,1), rgba(85,0,255,1));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-} */
+
 
 h1:hover {
         color: #fff;
@@ -75,7 +70,7 @@ header {
     height: 8rem;
     object-fit: cover;
     border-radius: 50%;
-    /* filter: grayscale(1); */
+    
     margin-top: 1rem;
 }
 
@@ -101,7 +96,7 @@ header {
     text-decoration: none;
     color: black;
     font-size: 0.75rem;
-    /* font-weight: 900; */
+    
 }
 
 @media screen and (max-width: 800px) {

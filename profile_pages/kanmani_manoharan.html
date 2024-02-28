@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ActressGram</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const rowDiv = document.getElementById("row");
+            const colDiv1 = document.createElement("div");
+            colDiv1.className = "column";
+            colDiv1.id = "col1";
+            const colDiv2 = document.createElement("div");
+            colDiv2.className = "column";
+            colDiv2.id = "col2";
+            const colDiv3 = document.createElement("div");
+            colDiv3.className = "column";
+            colDiv3.id = "col3";
+            const colDiv4 = document.createElement("div");
+            colDiv4.className = "column";
+            colDiv4.id = "col4";
+
+            const images = "profile_pages/images/kanmani_manoharan/2020-08-09_13-32-51_UTC.jpg profile_pages/images/kanmani_manoharan/2021-05-01_14-55-05_UTC_4.jpg profile_pages/images/kanmani_manoharan/2021-05-05_13-20-18_UTC_3.jpg profile_pages/images/kanmani_manoharan/2021-05-05_13-20-18_UTC_5.jpg profile_pages/images/kanmani_manoharan/2021-08-03_17-05-35_UTC_2.jpg profile_pages/images/kanmani_manoharan/2021-11-08_08-23-55_UTC_1.jpg profile_pages/images/kanmani_manoharan/2021-11-22_14-53-24_UTC_2.jpg profile_pages/images/kanmani_manoharan/2021-12-08_14-55-10_UTC_2.jpg profile_pages/images/kanmani_manoharan/2021-12-23_15-46-37_UTC_2.jpg profile_pages/images/kanmani_manoharan/2022-01-09_07-23-20_UTC_2.jpg profile_pages/images/kanmani_manoharan/2022-01-09_07-23-20_UTC_4.jpg profile_pages/images/kanmani_manoharan/2022-01-10_12-30-11_UTC.jpg profile_pages/images/kanmani_manoharan/2022-02-13_14-33-37_UTC.jpg profile_pages/images/kanmani_manoharan/2022-03-29_13-59-14_UTC_1.jpg profile_pages/images/kanmani_manoharan/2022-03-29_13-59-14_UTC_3.jpg profile_pages/images/kanmani_manoharan/2022-06-29_04-58-26_UTC.jpg profile_pages/images/kanmani_manoharan/2022-08-27_05-11-11_UTC_1.jpg profile_pages/images/kanmani_manoharan/2022-10-12_15-43-29_UTC_1.jpg profile_pages/images/kanmani_manoharan/2022-12-31_18-53-02_UTC_1.jpg profile_pages/images/kanmani_manoharan/2023-01-15_14-47-08_UTC.jpg profile_pages/images/kanmani_manoharan/2023-04-17_12-59-56_UTC.jpg profile_pages/images/kanmani_manoharan/2023-05-17_11-31-31_UTC_1.jpg profile_pages/images/kanmani_manoharan/2023-05-17_11-31-31_UTC_2.jpg profile_pages/images/kanmani_manoharan/2023-05-24_11-22-09_UTC_2.jpg profile_pages/images/kanmani_manoharan/2023-06-16_14-00-39_UTC_4.jpg profile_pages/images/kanmani_manoharan/2023-07-11_12-52-12_UTC_1.jpg profile_pages/images/kanmani_manoharan/2023-07-11_12-52-12_UTC_3.jpg profile_pages/images/kanmani_manoharan/2023-07-23_12-35-09_UTC_1.jpg profile_pages/images/kanmani_manoharan/2023-07-26_12-44-37_UTC_4.jpg profile_pages/images/kanmani_manoharan/2023-08-25_16-00-20_UTC_1.jpg profile_pages/images/kanmani_manoharan/2023-11-03_05-53-34_UTC_2.jpg profile_pages/images/kanmani_manoharan/2023-12-25_13-17-09_UTC_4.jpg profile_pages/images/kanmani_manoharan/2024-01-17_14-29-52_UTC_5.jpg profile_pages/images/kanmani_manoharan/2024-02-01_13-08-47_UTC_1.jpg profile_pages/images/kanmani_manoharan/2024-02-01_13-08-47_UTC_4.jpg profile_pages/images/kanmani_manoharan/2024-02-18_05-51-44_UTC_1.jpg profile_pages/images/kanmani_manoharan/2024-02-18_05-51-44_UTC_5.jpg profile_pages/images/kanmani_manoharan/2024-02-19_13-13-25_UTC_6.jpg profile_pages/images/kanmani_manoharan/2024-02-20_13-22-49_UTC.jpg"
+            .split(" ");
+            console.log(images.length);
+            const imagesPerDiv = Math.round(images.length / 4);
+            console.log(imagesPerDiv);
+            let imageCount = 0;
+            images.forEach(image => {
+                const img = document.createElement("img");
+                img.src = image.replace("profile_pages/","");
+                img.style = "width:100%";
+                if (imageCount < imagesPerDiv) {
+                    colDiv1.appendChild(img);
+                }
+                else if (imageCount < imagesPerDiv * 2) {
+                    colDiv2.appendChild(img);
+                }
+                else if (imageCount < imagesPerDiv * 3) {
+                    colDiv3.appendChild(img);
+                }
+                else if (imageCount < imagesPerDiv * 4){
+                    colDiv4.appendChild(img);
+                }
+                else {
+                    colDiv1.appendChild(img);
+                }
+                imageCount = imageCount + 1;
+            });
+            rowDiv.appendChild(colDiv1);
+            rowDiv.appendChild(colDiv2);
+            rowDiv.appendChild(colDiv3);
+            rowDiv.appendChild(colDiv4);
+        });
+    </script>
+</head>
+
+<body>
+    <div id="row" class="row">
+
+    </div>
+</body>
+
+</html>
