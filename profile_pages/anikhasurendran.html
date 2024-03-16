@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ActressGram</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const rowDiv = document.getElementById("row");
+            const colDiv1 = document.createElement("div");
+            colDiv1.className = "column";
+            colDiv1.id = "col1";
+            const colDiv2 = document.createElement("div");
+            colDiv2.className = "column";
+            colDiv2.id = "col2";
+            const colDiv3 = document.createElement("div");
+            colDiv3.className = "column";
+            colDiv3.id = "col3";
+            const colDiv4 = document.createElement("div");
+            colDiv4.className = "column";
+            colDiv4.id = "col4";
+
+            const images = "profile_pages/images/anikhasurendran/2021-02-25_12-32-48_UTC_2.jpg profile_pages/images/anikhasurendran/2021-08-05_14-51-08_UTC_1.jpg profile_pages/images/anikhasurendran/2021-10-13_13-54-03_UTC_2.jpg profile_pages/images/anikhasurendran/2021-12-23_04-44-04_UTC.jpg profile_pages/images/anikhasurendran/2021-12-23_14-17-18_UTC.jpg profile_pages/images/anikhasurendran/2022-06-08_12-46-18_UTC_2.jpg profile_pages/images/anikhasurendran/2022-06-10_12-53-28_UTC_1.jpg profile_pages/images/anikhasurendran/2022-07-30_13-34-27_UTC_6.jpg profile_pages/images/anikhasurendran/2022-08-07_12-50-28_UTC_2.jpg profile_pages/images/anikhasurendran/2022-08-07_12-50-28_UTC_3.jpg profile_pages/images/anikhasurendran/2022-10-12_13-27-46_UTC_1.jpg profile_pages/images/anikhasurendran/2022-10-24_03-11-23_UTC_3.jpg profile_pages/images/anikhasurendran/2022-11-11_12-31-42_UTC_1.jpg profile_pages/images/anikhasurendran/2022-11-11_12-31-42_UTC_4.jpg profile_pages/images/anikhasurendran/2022-12-07_11-45-00_UTC_3.jpg profile_pages/images/anikhasurendran/2023-01-21_13-05-16_UTC_2.jpg profile_pages/images/anikhasurendran/2023-03-04_14-47-52_UTC_2.jpg profile_pages/images/anikhasurendran/2023-04-06_14-29-39_UTC_2.jpg profile_pages/images/anikhasurendran/2023-05-06_14-12-07_UTC_1.jpg profile_pages/images/anikhasurendran/2023-06-18_13-50-26_UTC_2.jpg profile_pages/images/anikhasurendran/2023-06-26_07-14-44_UTC_1.jpg profile_pages/images/anikhasurendran/2023-06-26_07-14-44_UTC_2.jpg profile_pages/images/anikhasurendran/2023-06-29_14-25-06_UTC_4.jpg profile_pages/images/anikhasurendran/2023-07-10_13-11-30_UTC_4.jpg profile_pages/images/anikhasurendran/2023-07-27_13-09-55_UTC_1.jpg profile_pages/images/anikhasurendran/2023-07-27_13-09-55_UTC_2.jpg profile_pages/images/anikhasurendran/2023-10-04_13-52-30_UTC_1.jpg profile_pages/images/anikhasurendran/2023-10-08_13-56-00_UTC_5.jpg profile_pages/images/anikhasurendran/2023-10-12_12-55-00_UTC_3.jpg profile_pages/images/anikhasurendran/2023-11-12_05-14-15_UTC_3.jpg profile_pages/images/anikhasurendran/2023-11-12_11-10-53_UTC_4.jpg profile_pages/images/anikhasurendran/2023-12-09_11-36-40_UTC_1.jpg profile_pages/images/anikhasurendran/2024-03-07_07-28-48_UTC_2.jpg"
+            .split(" ");
+
+            const imagesPerDiv = Math.round(images.length / 4);
+            let imageCount = 0;
+            console.log(imagesPerDiv);
+            images.forEach(image => {
+                const img = document.createElement("img");
+                img.src = image.replace("profile_pages/","");
+                img.style = "width:100%";
+                if (imageCount < imagesPerDiv) {
+                    colDiv1.appendChild(img);
+                }
+                else if (imageCount < imagesPerDiv * 2) {
+                    colDiv2.appendChild(img);
+                }
+                else if (imageCount < imagesPerDiv * 3) {
+                    colDiv3.appendChild(img);
+                }
+                else if (imageCount < imagesPerDiv * 4){
+                    colDiv4.appendChild(img);
+                }
+                else {
+                    colDiv1.appendChild(img);
+                }
+                imageCount = imageCount + 1;
+                console.log(imageCount);
+            });
+            rowDiv.appendChild(colDiv1);
+            rowDiv.appendChild(colDiv2);
+            rowDiv.appendChild(colDiv3);
+            rowDiv.appendChild(colDiv4);
+        });
+    </script>
+</head>
+
+<body>
+    <div id="row" class="row">
+
+    </div>
+</body>
+
+</html>

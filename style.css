@@ -90,9 +90,10 @@ header {
     display: flex;
     flex-direction: column;
     margin: 1.5rem;
+    text-decoration: none;
 }
 
-.profile-id-link {
+.profile-name {
     text-decoration: none;
     color: black;
     font-size: 0.75rem;
@@ -131,7 +132,7 @@ main {
       background: black;
     }
   
-    .profile-id-link, h1{
+    .profile-name, h1{
       color: #e6e6e6;
     }
 

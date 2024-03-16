@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ActressGram</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const rowDiv = document.getElementById("row");
+            const colDiv1 = document.createElement("div");
+            colDiv1.className = "column";
+            colDiv1.id = "col1";
+            const colDiv2 = document.createElement("div");
+            colDiv2.className = "column";
+            colDiv2.id = "col2";
+            const colDiv3 = document.createElement("div");
+            colDiv3.className = "column";
+            colDiv3.id = "col3";
+            const colDiv4 = document.createElement("div");
+            colDiv4.className = "column";
+            colDiv4.id = "col4";
+
+            const images = "profile_pages/images/kaavyaarivumanioffl/2021-03-09_10-42-59_UTC_2.jpg profile_pages/images/kaavyaarivumanioffl/2021-07-12_03-41-08_UTC_2.jpg profile_pages/images/kaavyaarivumanioffl/2021-08-26_11-38-44_UTC_3.jpg profile_pages/images/kaavyaarivumanioffl/2021-09-25_13-38-10_UTC_1.jpg profile_pages/images/kaavyaarivumanioffl/2021-10-31_13-03-43_UTC_1.jpg profile_pages/images/kaavyaarivumanioffl/2021-11-01_14-05-32_UTC_2.jpg profile_pages/images/kaavyaarivumanioffl/2021-11-27_12-18-40_UTC_1.jpg profile_pages/images/kaavyaarivumanioffl/2021-11-28_14-25-39_UTC_4.jpg profile_pages/images/kaavyaarivumanioffl/2021-12-04_04-42-40_UTC_1.jpg profile_pages/images/kaavyaarivumanioffl/2022-01-20_12-39-48_UTC_3.jpg profile_pages/images/kaavyaarivumanioffl/2022-01-20_12-39-48_UTC_4.jpg profile_pages/images/kaavyaarivumanioffl/2022-02-17_15-11-16_UTC_2.jpg profile_pages/images/kaavyaarivumanioffl/2022-02-17_15-11-16_UTC_3.jpg profile_pages/images/kaavyaarivumanioffl/2022-03-04_05-16-32_UTC_2.jpg profile_pages/images/kaavyaarivumanioffl/2022-03-04_11-45-20_UTC_1.jpg profile_pages/images/kaavyaarivumanioffl/2022-03-25_13-21-12_UTC_1.jpg profile_pages/images/kaavyaarivumanioffl/2022-03-25_13-21-12_UTC_3.jpg profile_pages/images/kaavyaarivumanioffl/2022-06-04_11-53-56_UTC_3.jpg profile_pages/images/kaavyaarivumanioffl/2022-06-21_12-39-49_UTC_1.jpg profile_pages/images/kaavyaarivumanioffl/2022-07-01_12-19-10_UTC_3.jpg profile_pages/images/kaavyaarivumanioffl/2022-07-02_12-15-10_UTC_3.jpg profile_pages/images/kaavyaarivumanioffl/2022-07-29_12-57-29_UTC_1.jpg profile_pages/images/kaavyaarivumanioffl/2022-08-18_05-58-31_UTC_1.jpg profile_pages/images/kaavyaarivumanioffl/2022-08-18_12-13-26_UTC_1.jpg profile_pages/images/kaavyaarivumanioffl/2022-09-02_11-58-36_UTC_1.jpg profile_pages/images/kaavyaarivumanioffl/2022-09-02_11-58-36_UTC_2.jpg profile_pages/images/kaavyaarivumanioffl/2022-09-03_13-20-50_UTC_1.jpg profile_pages/images/kaavyaarivumanioffl/2022-10-18_11-39-46_UTC_1.jpg profile_pages/images/kaavyaarivumanioffl/2022-10-24_03-31-23_UTC_1.jpg profile_pages/images/kaavyaarivumanioffl/2022-10-29_11-43-18_UTC_2.jpg profile_pages/images/kaavyaarivumanioffl/2022-11-04_06-12-06_UTC_1.jpg profile_pages/images/kaavyaarivumanioffl/2022-11-04_06-12-06_UTC_2.jpg profile_pages/images/kaavyaarivumanioffl/2022-11-06_06-41-57_UTC.jpg profile_pages/images/kaavyaarivumanioffl/2022-11-16_12-03-41_UTC_1.jpg profile_pages/images/kaavyaarivumanioffl/2022-12-15_11-19-19_UTC_3.jpg profile_pages/images/kaavyaarivumanioffl/2022-12-18_11-42-09_UTC_3.jpg profile_pages/images/kaavyaarivumanioffl/2022-12-25_11-33-51_UTC_1.jpg profile_pages/images/kaavyaarivumanioffl/2022-12-25_11-33-51_UTC_3.jpg profile_pages/images/kaavyaarivumanioffl/2023-01-13_11-44-33_UTC_1.jpg profile_pages/images/kaavyaarivumanioffl/2023-01-31_11-22-47_UTC_1.jpg profile_pages/images/kaavyaarivumanioffl/2023-01-31_11-22-47_UTC_2.jpg profile_pages/images/kaavyaarivumanioffl/2023-02-06_11-59-10_UTC_3.jpg profile_pages/images/kaavyaarivumanioffl/2023-02-12_08-02-11_UTC_1.jpg profile_pages/images/kaavyaarivumanioffl/2023-03-28_07-25-13_UTC_2.jpg profile_pages/images/kaavyaarivumanioffl/2023-04-14_09-14-00_UTC_2.jpg profile_pages/images/kaavyaarivumanioffl/2023-04-29_10-18-51_UTC_4.jpg profile_pages/images/kaavyaarivumanioffl/2023-05-05_04-58-21_UTC_3.jpg profile_pages/images/kaavyaarivumanioffl/2023-05-14_08-49-11_UTC_1.jpg profile_pages/images/kaavyaarivumanioffl/2023-05-14_08-49-11_UTC_5.jpg profile_pages/images/kaavyaarivumanioffl/2023-05-18_05-44-59_UTC_2.jpg profile_pages/images/kaavyaarivumanioffl/2023-05-26_04-59-49_UTC_1.jpg profile_pages/images/kaavyaarivumanioffl/2023-08-16_12-15-23_UTC_1.jpg profile_pages/images/kaavyaarivumanioffl/2023-09-11_11-14-28_UTC_3.jpg profile_pages/images/kaavyaarivumanioffl/2023-09-11_11-14-28_UTC_4.jpg profile_pages/images/kaavyaarivumanioffl/2023-10-25_05-09-33_UTC_1.jpg profile_pages/images/kaavyaarivumanioffl/2023-10-25_05-09-33_UTC_5.jpg profile_pages/images/kaavyaarivumanioffl/2023-11-01_12-05-54_UTC_1.jpg profile_pages/images/kaavyaarivumanioffl/2023-11-12_05-25-53_UTC_2.jpg profile_pages/images/kaavyaarivumanioffl/2023-11-17_07-47-47_UTC_2.jpg profile_pages/images/kaavyaarivumanioffl/2023-11-21_06-23-27_UTC_4.jpg profile_pages/images/kaavyaarivumanioffl/2023-11-22_08-22-12_UTC_4.jpg profile_pages/images/kaavyaarivumanioffl/2023-12-10_11-41-35_UTC_2.jpg profile_pages/images/kaavyaarivumanioffl/2023-12-15_04-33-18_UTC_2.jpg profile_pages/images/kaavyaarivumanioffl/2023-12-23_07-36-55_UTC_6.jpg profile_pages/images/kaavyaarivumanioffl/2024-01-14_03-46-43_UTC_2.jpg profile_pages/images/kaavyaarivumanioffl/2024-01-27_11-44-11_UTC_4.jpg profile_pages/images/kaavyaarivumanioffl/2024-01-28_05-38-23_UTC_1.jpg profile_pages/images/kaavyaarivumanioffl/2024-02-05_10-38-00_UTC_4.jpg profile_pages/images/kaavyaarivumanioffl/2024-02-11_08-55-19_UTC_2.jpg profile_pages/images/kaavyaarivumanioffl/2024-02-14_09-29-25_UTC_1.jpg profile_pages/images/kaavyaarivumanioffl/2024-02-16_02-30-11_UTC_3.jpg profile_pages/images/kaavyaarivumanioffl/2024-02-21_12-39-48_UTC_4.jpg profile_pages/images/kaavyaarivumanioffl/2024-02-21_12-39-48_UTC_5.jpg profile_pages/images/kaavyaarivumanioffl/2024-02-28_10-57-53_UTC_1.jpg profile_pages/images/kaavyaarivumanioffl/2024-03-07_04-41-55_UTC_3.jpg"
+            .split(" ");
+
+            const imagesPerDiv = Math.round(images.length / 4);
+            let imageCount = 0;
+            console.log(imagesPerDiv);
+            images.forEach(image => {
+                const img = document.createElement("img");
+                img.src = image.replace("profile_pages/","");
+                img.style = "width:100%";
+                if (imageCount < imagesPerDiv) {
+                    colDiv1.appendChild(img);
+                }
+                else if (imageCount < imagesPerDiv * 2) {
+                    colDiv2.appendChild(img);
+                }
+                else if (imageCount < imagesPerDiv * 3) {
+                    colDiv3.appendChild(img);
+                }
+                else if (imageCount < imagesPerDiv * 4){
+                    colDiv4.appendChild(img);
+                }
+                else {
+                    colDiv1.appendChild(img);
+                }
+                imageCount = imageCount + 1;
+                console.log(imageCount);
+            });
+            rowDiv.appendChild(colDiv1);
+            rowDiv.appendChild(colDiv2);
+            rowDiv.appendChild(colDiv3);
+            rowDiv.appendChild(colDiv4);
+        });
+    </script>
+</head>
+
+<body>
+    <div id="row" class="row">
+
+    </div>
+</body>
+
+</html>

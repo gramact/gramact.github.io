@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ActressGram</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const rowDiv = document.getElementById("row");
+            const colDiv1 = document.createElement("div");
+            colDiv1.className = "column";
+            colDiv1.id = "col1";
+            const colDiv2 = document.createElement("div");
+            colDiv2.className = "column";
+            colDiv2.id = "col2";
+            const colDiv3 = document.createElement("div");
+            colDiv3.className = "column";
+            colDiv3.id = "col3";
+            const colDiv4 = document.createElement("div");
+            colDiv4.className = "column";
+            colDiv4.id = "col4";
+
+            const images = "profile_pages/images/alayaf/2019-12-27_11-54-27_UTC_3.jpg profile_pages/images/alayaf/2020-01-03_07-47-54_UTC.jpg profile_pages/images/alayaf/2020-04-11_09-19-45_UTC.jpg profile_pages/images/alayaf/2020-09-18_09-04-18_UTC.jpg profile_pages/images/alayaf/2020-10-07_12-26-27_UTC.jpg profile_pages/images/alayaf/2020-10-26_11-19-46_UTC.jpg profile_pages/images/alayaf/2020-11-08_11-14-04_UTC_3.jpg profile_pages/images/alayaf/2020-11-28_09-29-04_UTC.jpg profile_pages/images/alayaf/2020-11-30_06-49-23_UTC_1.jpg profile_pages/images/alayaf/2020-11-30_06-49-23_UTC_3.jpg profile_pages/images/alayaf/2020-12-05_08-30-17_UTC_3.jpg profile_pages/images/alayaf/2021-02-09_10-57-21_UTC.jpg profile_pages/images/alayaf/2021-03-15_12-10-37_UTC.jpg profile_pages/images/alayaf/2021-07-12_11-28-23_UTC.jpg profile_pages/images/alayaf/2021-10-01_12-32-18_UTC_1.jpg profile_pages/images/alayaf/2021-10-01_12-32-18_UTC_2.jpg profile_pages/images/alayaf/2021-10-03_04-42-12_UTC_1.jpg profile_pages/images/alayaf/2021-10-03_04-42-12_UTC_2.jpg profile_pages/images/alayaf/2021-10-03_11-55-45_UTC.jpg profile_pages/images/alayaf/2021-10-04_07-51-10_UTC_1.jpg profile_pages/images/alayaf/2021-10-04_07-51-10_UTC_2.jpg profile_pages/images/alayaf/2021-10-04_13-14-52_UTC_1.jpg profile_pages/images/alayaf/2021-10-04_13-14-52_UTC_2.jpg profile_pages/images/alayaf/2022-06-18_07-05-53_UTC_1.jpg profile_pages/images/alayaf/2022-06-18_07-05-53_UTC_2.jpg profile_pages/images/alayaf/2022-08-02_06-42-40_UTC_1.jpg profile_pages/images/alayaf/2022-08-02_06-42-40_UTC_2.jpg profile_pages/images/alayaf/2022-08-02_06-42-40_UTC_3.jpg profile_pages/images/alayaf/2022-08-04_10-05-45_UTC_1.jpg profile_pages/images/alayaf/2022-08-04_10-05-45_UTC_2.jpg profile_pages/images/alayaf/2022-08-04_10-05-45_UTC_3.jpg profile_pages/images/alayaf/2022-10-30_11-59-38_UTC_3.jpg profile_pages/images/alayaf/2022-12-22_14-03-20_UTC_1.jpg profile_pages/images/alayaf/2022-12-22_14-03-20_UTC_3.jpg profile_pages/images/alayaf/2023-02-27_14-23-01_UTC_1.jpg profile_pages/images/alayaf/2023-02-27_14-23-01_UTC_2.jpg profile_pages/images/alayaf/2023-02-27_14-23-01_UTC_3.jpg profile_pages/images/alayaf/2023-03-02_10-58-25_UTC_1.jpg profile_pages/images/alayaf/2023-03-02_10-58-25_UTC_2.jpg profile_pages/images/alayaf/2023-06-06_10-31-06_UTC_1.jpg profile_pages/images/alayaf/2023-06-06_10-31-06_UTC_2.jpg profile_pages/images/alayaf/2023-06-06_10-31-06_UTC_3.jpg profile_pages/images/alayaf/2023-07-23_05-42-37_UTC_1.jpg profile_pages/images/alayaf/2023-07-23_05-42-37_UTC_2.jpg profile_pages/images/alayaf/2023-07-23_05-42-37_UTC_3.jpg profile_pages/images/alayaf/2023-07-23_05-42-37_UTC_4.jpg profile_pages/images/alayaf/2023-11-08_07-22-25_UTC_1.jpg profile_pages/images/alayaf/2023-11-28_11-45-35_UTC_1.jpg profile_pages/images/alayaf/2023-11-28_11-45-35_UTC_2.jpg profile_pages/images/alayaf/2023-11-28_11-45-35_UTC_4.jpg profile_pages/images/alayaf/2023-12-13_11-13-49_UTC_1.jpg profile_pages/images/alayaf/2024-03-13_08-50-15_UTC_5.jpg"
+            .split(" ");
+
+            const imagesPerDiv = Math.round(images.length / 4);
+            let imageCount = 0;
+            console.log(imagesPerDiv);
+            images.forEach(image => {
+                const img = document.createElement("img");
+                img.src = image.replace("profile_pages/","");
+                img.style = "width:100%";
+                if (imageCount < imagesPerDiv) {
+                    colDiv1.appendChild(img);
+                }
+                else if (imageCount < imagesPerDiv * 2) {
+                    colDiv2.appendChild(img);
+                }
+                else if (imageCount < imagesPerDiv * 3) {
+                    colDiv3.appendChild(img);
+                }
+                else if (imageCount < imagesPerDiv * 4){
+                    colDiv4.appendChild(img);
+                }
+                else {
+                    colDiv1.appendChild(img);
+                }
+                imageCount = imageCount + 1;
+                console.log(imageCount);
+            });
+            rowDiv.appendChild(colDiv1);
+            rowDiv.appendChild(colDiv2);
+            rowDiv.appendChild(colDiv3);
+            rowDiv.appendChild(colDiv4);
+        });
+    </script>
+</head>
+
+<body>
+    <div id="row" class="row">
+
+    </div>
+</body>
+
+</html>
