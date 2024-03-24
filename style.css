@@ -70,12 +70,14 @@ header {
     height: 8rem;
     object-fit: cover;
     border-radius: 50%;
-    
-    margin-top: 1rem;
+    /* box-shadow: 5px 5px white; */
+    margin: 1rem;
 }
 
 .profile-container:hover {
     transform: scale(1.5);
+    .profile-img{box-shadow: 5px 5px rgb(255,0,138);}
+    .profile-name {text-shadow: 1px 1px rgb(255,0,138);}
 }
 
 #imageGallery {
@@ -145,4 +147,26 @@ main {
     color: white;
     width: 4rem;
     height: auto;
+  }
+
+  #myBtn {
+    /* display: none; */
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: rgb(255,0,138);
+    color: white;
+    cursor: pointer;
+    font-weight: 900;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 18px;
+  }
+  
+  #myBtn:hover {
+    background-color: white;
+    color: rgb(255,0,138);
   }
